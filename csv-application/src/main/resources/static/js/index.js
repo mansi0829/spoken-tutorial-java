@@ -5,7 +5,6 @@ var singleFileUploadInput = document.querySelector('#singleFileUploadInput');
 var singleFileUploadError = document.querySelector('#singleFileUploadError');
 var singleFileUploadSuccess = document.querySelector('#singleFileUploadSuccess');
 
-
 function uploadSingleFile(file) {
     var formData = new FormData();
     formData.append("file", file);
@@ -18,7 +17,7 @@ function uploadSingleFile(file) {
         var response = JSON.parse(xhr.responseText);
         if(xhr.status == 200) {
             singleFileUploadError.style.display = "none";
-            singleFileUploadSuccess.innerHTML = <p></p><p>DownloadUrl : <a href='" + response.fileDownloadUri + "' target='_blank'>" + response.fileDownloadUri + "</a></p>;
+            singleFileUploadSuccess.innerHTML = "<p>File Uploaded Successfully.</p><p>View Here : <a href='" + response.fileDownloadUri + "' target='_blank'>" + response.fileDownloadUri + "</a></p>";
             singleFileUploadSuccess.style.display = "block";
         } else {
             singleFileUploadSuccess.style.display = "none";
