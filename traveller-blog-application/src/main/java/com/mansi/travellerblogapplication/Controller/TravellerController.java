@@ -40,12 +40,12 @@ public class TravellerController {
 
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
-    @GetMapping(value = {"/", "/home"})
+    @GetMapping(value = {"/", "/home"})                 //home route
     public String addProductPage() {
         return "index";
     }
 
-    @PostMapping("/image/saveImageDetails")
+    @PostMapping("/blog/saveBlogDetails")              //to send data to mysql server
     public @ResponseBody ResponseEntity<?> createProduct(@RequestParam("name") String name,
                                                          @RequestParam("date") double date, @RequestParam("description") String description, Model model, HttpServletRequest request
             ,final @RequestParam("image") MultipartFile file) {
@@ -97,19 +97,19 @@ public class TravellerController {
         }
     }
 
-    @GetMapping("/image/display/{id}")
+    @GetMapping("/blog/display/{id}")               //to view blog by id
     @ResponseBody
     void showImage(@PathVariable("id") Long id, HttpServletResponse response, Optional<TravellerEntity> travellerEntity)
             throws ServletException, IOException {
         log.info("Id :: " + id);
         travellerEntity = travellerService.getImageById(id);
-        response.setContentType("image/jpeg, image/jpg, image/png, image/gif");
+        response.setContentType("image/jpeg, image/jpg, image/png");       //image format declared
         response.getOutputStream().write(travellerEntity.get().getImage());
         response.getOutputStream().close();
     }
 
-    @GetMapping("/image/imageDetails")
-    String showProductDetails(@RequestParam("id") Long id, Optional<TravellerEntity> travellerEntity, Model model) {
+    @GetMapping("/blog/viewBlogs")
+    String showBlogDetails(@RequestParam("id") Long id, Optional<TravellerEntity> travellerEntity, Model model) {
         try {
             log.info("Id :: " + id);
             if (id != 0) {
@@ -121,7 +121,7 @@ public class TravellerController {
                     model.addAttribute("description", travellerEntity.get().getDescription());
                     model.addAttribute("name", travellerEntity.get().getName());
                     model.addAttribute("date", travellerEntity.get().getDate());
-                    return "imagedetails";
+                    return "viewBlogs";
                 }
                 return "redirect:/home";
             }
@@ -132,10 +132,10 @@ public class TravellerController {
         }
     }
 
-    @GetMapping("/image/show")
+    @GetMapping("/blog/show")               //to diplay list of all the blogs
     String show(Model map) {
         List<TravellerEntity> images = travellerService.getAllActiveImages();
         map.addAttribute("images", images);
-        return "images";
+        return "blog";
     }
 }

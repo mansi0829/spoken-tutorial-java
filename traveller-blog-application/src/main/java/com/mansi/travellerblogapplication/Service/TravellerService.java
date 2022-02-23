@@ -12,17 +12,17 @@ import org.springframework.stereotype.Service;
 public class TravellerService {
 
     @Autowired
-    private TravellerRepository imageGalleryRepository;
+    private TravellerRepository travellerRepository;
 
     public void saveImage(TravellerEntity imageGallery) {
-        imageGalleryRepository.save(imageGallery);
+        travellerRepository.save(imageGallery);
     }
 
     public List<TravellerEntity> getAllActiveImages() {
-        return imageGalleryRepository.findAll();
+        return travellerRepository.findAll();
     }
 
     public Optional<TravellerEntity> getImageById(Long id) {
-        return imageGalleryRepository.findById(id);
+        return travellerRepository.findById(id);
     }
 }

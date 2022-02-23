@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Traveller Blog</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<br><br>
+<h1 class="text-center">Travellers Blog</h1><br><br>
+<div class="contact py-sm-5 py-4">
+    <div class="container py-xl-4 py-lg-2">
+        <!-- form -->
+        <form id="form">
+            <div class="contact-grids1 w3agile-6">
+                <div class="p-8">
+                    <div class="contact-form1 form-group">
+                        <label class="col-form-label">Name</label>
+                        <input class="form-control" id="name" name="name" placeholder="Name" required="required"
+                               type="text">
+                        <p id="error_name"></p>
+                    </div>
+                    <div class="contact-form1 form-group">
+                        <label class="col-form-label">Description</label>
+                        <textarea class="form-control" cols="45" id="description" name="description" placeholder="Description"
+                                  required="required" rows="3"></textarea>
+                        <p id="error_description"></p>
+                    </div>
+                    <div class="contact-form1 form-group">
+                        <label class="col-form-label">Image</label>
+                        <input class="form-control" id="image" name="image" placeholder="" required="required"
+                               type="file">
+                        <p id="error_file"></p>
+                    </div>
+                    <div class="contact-form1 form-group">
+                        <label for="date">Date</label><br>
+                        <input type="date" name="date" required="required" id="date">
+                        <p id="error_date"></p>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="right-w3l col-md-6">
+                    <!--                    <input type="button" id="submit" style="float:left;" class="btn btn-primary " value="Submit">-->
+                    <!--                    <div class="btn-padding"><a href="/blog/show" style="float:left;" class="btn btn-success text-right ">Show All</a></div>-->
+                    <p class="tpbutton btn-toolbar" style="text-align:center">
+                        <input class="btn navbar-btn btn-primary" href="#" id="submit" target="_texturepack"
+                               type="button" value="Submit"></input>
+                        <a class="btn navbar-btn btn-success" href="/blog/show" target="_texturepack">View Blogs</a>
+                    </p>
+                    <br><br>
+                </div>
+            </div>
+            <br>
+            <div class="text-center" id="success" style="color:green;"></div>
+            <div class="text-center" id="error" style="color:red;"></div>
+        </form>
+    </div>
+</div>
+<p class="text-center">
+<div class="spinner-border" role="status">
+    <span class="sr-only">Loading...</span>
+</div>
+</p>
+<script src="/js/index.js"></script>
+</body>
+</html>
