@@ -16,6 +16,8 @@ import javax.persistence.TemporalType;
 @Table(name = "traveller_blog")
 public class TravellerEntity {
 
+    //mysql database entity created
+
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false, unique = true)
     private Long id;
@@ -38,6 +40,8 @@ public class TravellerEntity {
     private Date createDate;
 
     public TravellerEntity() {}
+
+    //getter and setter method implemented
 
     public Long getId() {
         return id;

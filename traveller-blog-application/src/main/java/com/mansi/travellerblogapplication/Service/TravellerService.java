@@ -14,8 +14,8 @@ public class TravellerService {
     @Autowired
     private TravellerRepository travellerRepository;
 
-    public void saveImage(TravellerEntity imageGallery) {
-        travellerRepository.save(imageGallery);
+    public void saveImage(TravellerEntity travellerRepository) {
+        travellerRepository.save(travellerRepository);
     }
 
     public List<TravellerEntity> getAllActiveImages() {

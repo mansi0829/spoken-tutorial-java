@@ -5,25 +5,24 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity                 //table mapped with entity
-@Table(name = "Data")   //table annotation indicates database table
+@Entity                             //table mapped with entity
+@Table(name = "Data")               //table annotation indicates database table
 
 public class CsvModel {
-    @Id                 //id to represent primary key in table
+    @Id                             //id to represent primary key in table
     @Column(name = "id")
     private long id;
 
-    @Column(name = "name")
+    @Column(name = "name")          //name added to mysql database
     private String name;
 
-    @Column(name = "email")
+    @Column(name = "email")         //email added to mysql database
     private String email;
 
-    @Column(name = "phonenumber")
+    @Column(name = "phonenumber")   //phonenumber added to mysql database
     private long phonenumber;
 
     public CsvModel() {
-
     }
     public CsvModel(long id, String name, String  email, long phonenumber) {
         //constructor
@@ -33,6 +32,8 @@ public class CsvModel {
         this.phonenumber = phonenumber;
     }
 
+    //getter and setter method implemented
+    
     public long getId() {
         return id;
     }

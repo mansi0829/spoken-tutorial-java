@@ -97,13 +97,13 @@ public class TravellerController {
         }
     }
 
-    @GetMapping("/blog/display/{id}")               //to view blog by id
+    @GetMapping("/blog/display/{id}")                                       //to view blog by id
     @ResponseBody
     void showImage(@PathVariable("id") Long id, HttpServletResponse response, Optional<TravellerEntity> travellerEntity)
             throws ServletException, IOException {
         log.info("Id :: " + id);
         travellerEntity = travellerService.getImageById(id);
-        response.setContentType("image/jpeg, image/jpg, image/png");       //image format declared
+        response.setContentType("image/jpeg, image/jpg, image/png");        //image format declared
         response.getOutputStream().write(travellerEntity.get().getImage());
         response.getOutputStream().close();
     }
@@ -132,7 +132,7 @@ public class TravellerController {
         }
     }
 
-    @GetMapping("/blog/show")               //to diplay list of all the blogs
+    @GetMapping("/blog/show")                                             //to diplay list of all the blogs
     String show(Model map) {
         List<TravellerEntity> images = travellerService.getAllActiveImages();
         map.addAttribute("images", images);

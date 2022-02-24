@@ -36,7 +36,7 @@
     <td th:text="${travellerBlog.description}"></td>
     <td th:text="${travellerBlog.date}"></td>
     <td th:text="${#dates.format({travellerBlog.createDate}, 'dd-MM-yyyy')}"/></td>
-    <td><a th:href="@{/blog/imageDetails(id=${travellerBlog.id})}" class="btn btn-info text-right" target="_blank">Edit</a>
+    <td><a th:href="@{/blog/imageDetails(id=${travellerBlog.id})}" class="btn btn-info text-right" target="_blank">Edit</a><br>
     <br><a th:href="@{/blog/imageDetails(id=${travellerBlog.id})}" class="btn btn-info text-right" target="_blank">View</a></td>
   </tr>
   </tbody>
