@@ -4,7 +4,7 @@
 Name : Mansi Gundre <br>
 Email : **mansigundre1@gmail.com** <br>
 
-<h2>This repository contains both screening task for Web development in Spring/JAVA</h2>
+<h2>This repository contains both screening task for Fossee Sem Long Internship in Web development Spring/JAVA</h2>
 
 Task 1 : Create a Web Application that allows a user to upload a CSV file. <br>
 Task 2 : Create a Traveller blog application.
